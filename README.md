@@ -27,13 +27,13 @@ We can match for explicit sequences that show up _anywhere_ in the string:
 
 We can match for repeated sequences using **grouping** (parantheses) and curlies (`{min,[max]}`):
 
-- `"look a cat!".match(/(cat){1}/` - contains "cat" 1 time in a row
-- `"catcatcat".match(/(cat){3}/` - contains "cat" three times in a row
-- `"catcatfish".match(/(cat){1,3}fish/` - contains "cat" 1-3 times in a row, followed by "fish"
+- `"look a cat!".match(/(cat){1}/)` - contains "cat" 1 time in a row
+- `"catcatcat".match(/(cat){3}/)` - contains "cat" three times in a row
+- `"catcatfish".match(/(cat){1,3}fish/)` - contains "cat" 1-3 times in a row, followed by "fish"
 
 For some common cases, we can simplify by using `?` (0 or 1), `*` (0 or more), and `+` (1 or more):
 
-- `"He typed: redrum redrum redrum".match(/(redrum ?)+/` - contains "redrum" (with or without a space) 1 or more times in a row
+- `"He typed: redrum redrum redrum".match(/(redrum ?)+/)` - contains "redrum" (with or without a space) 1 or more times in a row
 
 We can match for this word or that word, using a pipe `|`
 
@@ -64,8 +64,8 @@ We can also negate match groups, if we want to ensure that certain characters ar
 
 And finally, we can talk about boundaries, like "carriage returns" (what happens when you hit the `enter` key), spaces, tabs, etc. And we can describe the beginning (`^`) or end (`$`) of a string to ensure that our match occurs in a specific location.
 
-- `"dogfish"` .match(/^dog/) - starts with "dog"
-- `"dogfish"` .match(/fish$/) - ends with "fish"
+- `"dogfish".match(/^dog/)` - starts with "dog"
+- `"dogfish".match(/fish$/)` - ends with "fish"
 
 #### Everybody Stand Back!
 
